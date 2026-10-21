@@ -1,0 +1,7 @@
+flowchart TB
+    accTitle: Deterministic Matching Adversary
+    accDescr: The first request can use either unit capacity vertex. If rejected, stop. If assigned to one vertex, the second request can only use that occupied vertex.
+    first["容量 a = b = 1；u₁ 邻居为 {a,b}"] --> choice{"算法如何处理 u₁？"}
+    choice -->|"拒绝"| stop["立即结束：ALG = 0，OPT = 1"]
+    choice -->|"分配给 v"| second["令 u₂ 只连接 v"]
+    second --> end_result["ALG ≤ 1；OPT = 2"]

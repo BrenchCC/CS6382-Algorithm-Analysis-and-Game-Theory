@@ -1,0 +1,7 @@
+flowchart TB
+    accTitle: Terminal MST Construction Steps
+    accDescr: Start from the original graph, build the terminal distance graph, take an MST, expand shortest paths, then remove cycles.
+    original["原图 G：含终端与非终端"] --> metric["终端完全图：边权为最短路距离"]
+    metric --> mst["终端 MST：费用 d(M)"]
+    mst --> union["展开最短路：路径并集"]
+    union --> result["去环得到 A：费用 c(A) ≤ d(M)"]

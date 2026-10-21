@@ -1,0 +1,8 @@
+flowchart TB
+    accTitle: Rent Or Buy Threshold
+    accDescr: At the start of each required day, observe the rent before deciding whether the total paid rent plus today's price reaches the purchase cost.
+    reveal["当天需要使用，公布租金 r_t"] --> test{"R + r_t ≥ B？"}
+    test -->|"是"| buy["支付 B 购买；当天不付租金"]
+    test -->|"否"| rent["支付 r_t；更新 R"]
+    rent --> next_day["若还有下一天，继续"]
+    next_day --> reveal

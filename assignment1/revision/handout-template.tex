@@ -1,0 +1,87 @@
+\documentclass[11pt,a4paper,fontset=none]{ctexart}
+\usepackage[margin=20mm,top=22mm,bottom=21mm,headheight=15pt]{geometry}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Menlo}[Scale=0.84]
+\setCJKmainfont{Songti SC}[BoldFont=Heiti SC]
+\setCJKsansfont{PingFang SC}
+\setCJKmonofont{PingFang SC}
+\usepackage{amsmath,amssymb}
+\providecommand{\lt}{<}
+\providecommand{\gt}{>}
+
+\usepackage{graphicx}
+\usepackage{xcolor}
+\definecolor{ink}{HTML}{203247}
+\definecolor{accent}{HTML}{245B91}
+\definecolor{muted}{HTML}{536274}
+\usepackage{booktabs,longtable,array,calc}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{fvextra}
+\usepackage{hyperref}
+\usepackage{bookmark}
+\hypersetup{unicode=true,colorlinks=true,linkcolor=accent,urlcolor=accent,pdftitle={CS6382 作业 1：零基础复习讲义},pdfauthor={学习讲义},pdfsubject={近似算法与在线算法；六题二十七问}}
+\newcommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+\setlength{\emergencystretch}{3em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setstretch{1.18}
+\setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{1}
+\setlist{leftmargin=1.7em,itemsep=0.3em,topsep=0.3em}
+\ctexset{section={format=\Large\sffamily\bfseries\color{accent},beforeskip=0.4em,afterskip=0.5em},subsection={format=\large\sffamily\bfseries\color{ink},beforeskip=0.4em,afterskip=0.5em}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{muted}CS6382 · 作业 1 复习讲义}
+\fancyhead[R]{\small\sffamily\color{muted}算法分析与博弈论}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\arraystretch}{1.25}
+\setlength{\tabcolsep}{5pt}
+\AtBeginEnvironment{longtable}{\small}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,fontsize=\small}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>0.38\textheight0.38\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\usepackage{caption}
+\newcounter{none}
+
+\usepackage{float}
+
+\captionsetup{font=small,labelfont=bf,skip=6pt}
+\floatplacement{figure}{H}
+$for(header-includes)$
+$header-includes$
+$endfor$
+\begin{document}
+\begin{titlepage}
+\color{ink}
+\vspace*{20mm}
+{\sffamily\color{accent}\Large CS6382\par}
+\vspace{8mm}
+{\sffamily\bfseries\fontsize{31}{42}\selectfont 作业 1\par 零基础复习讲义\par}
+\vspace{9mm}
+{\Large 近似算法与在线算法\par}
+\vspace{14mm}
+{\color{accent}\rule{\linewidth}{1.4pt}}
+\vspace{8mm}
+{\large 6 道大题 · 27 个小问 · 16 幅图解 · 12 道自测\par}
+\vspace{5mm}
+从符号和模型开始，逐题建立直觉，完成推导与证明。\par
+中文讲解，保留必要英文术语，便于对照原题。\par
+\vfill
+{\small 依据仓库中的作业原题编写；学习辅助材料。\par}
+{\small 2026 年 10 月 22 日\par}
+\end{titlepage}
+\pagenumbering{roman}
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+$body$
+\end{document}
