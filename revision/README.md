@@ -7,17 +7,17 @@
 从仓库根目录执行：
 
 ```bash
-node assignment1/revision/build_handout.mjs
+node revision/build_handout.mjs
 ```
 
-输出为 `assignment1/revision/output/pdf/CS6382_Assignment_1_Beginner_Revision_Handout.zh.pdf`，中间文件位于 `tmp/pdfs/`。脚本依次生成图形、转换矢量插图、调用 Pandoc，并运行三轮 XeLaTeX 更新目录和链接。
+输出为 `revision/output/pdf/CS6382_Assignment_1_Beginner_Revision_Handout.zh.pdf`，中间文件位于 `tmp/pdfs/`。脚本依次生成图形、转换矢量插图、调用 Pandoc，并运行三轮 XeLaTeX 更新目录和链接。
 
 环境需要 Node.js 22.13 或更新版本、npm、Pandoc、XeLaTeX、`rsvg-convert` 和 Poppler（`pdfinfo`、`pdftoppm`、`pdftotext`）。当前模板使用 macOS 的 Songti SC、Heiti SC、PingFang SC、Times New Roman、Arial 和 Menlo 字体。
 
 首次构建会将 Mermaid CLI 12.0.0 安装至仓库的 `.cache/cs6382-handout-tools/`，不修改全局 npm 包。默认使用本机已安装的 Google Chrome 渲染图形；如使用其他位置的 Chrome 或 Chromium，可指定可执行文件：
 
 ```bash
-HANDOUT_CHROME='/path/to/chrome' node assignment1/revision/build_handout.mjs
+HANDOUT_CHROME='/path/to/chrome' node revision/build_handout.mjs
 ```
 
 ## 修订
@@ -32,8 +32,8 @@ HANDOUT_CHROME='/path/to/chrome' node assignment1/revision/build_handout.mjs
 重建后检查编译日志中的越界、缺字与未解决引用，再将 PDF 每页渲染为图片查看。公式的文本提取可能改变排版顺序，不能代替视觉检查。
 
 ```bash
-pdftoppm -r 105 -png assignment1/revision/output/pdf/CS6382_Assignment_1_Beginner_Revision_Handout.zh.pdf tmp/pdfs/page
-pdftotext -layout assignment1/revision/output/pdf/CS6382_Assignment_1_Beginner_Revision_Handout.zh.pdf tmp/pdfs/handout.txt
+pdftoppm -r 105 -png revision/output/pdf/CS6382_Assignment_1_Beginner_Revision_Handout.zh.pdf tmp/pdfs/page
+pdftotext -layout revision/output/pdf/CS6382_Assignment_1_Beginner_Revision_Handout.zh.pdf tmp/pdfs/handout.txt
 ```
 
-题意以 `assignment1/docs/` 的原始 PDF 为准。本目录不会改动题目、已有答案和提交材料。
+题意以 `docs/` 的原始 PDF 为准。本目录不会改动题目、已有答案和提交材料。

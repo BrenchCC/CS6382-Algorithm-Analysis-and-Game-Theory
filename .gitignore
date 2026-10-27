@@ -429,3 +429,6 @@ CLAUDE.md
 .omc
 .codex*
 .claude*
+
+# CS6382 handout build intermediates
+/tmp/pdfs/

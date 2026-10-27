@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 // Keep generated intermediates outside the editable handout sources.
 const source = path.dirname(fileURLToPath(import.meta.url));
-const repo = path.resolve(source, '../..');
+const repo = path.resolve(source, '..');
 const work = path.join(repo, 'tmp/pdfs');
 const tools = path.join(repo, '.cache/cs6382-handout-tools');
 const output = path.join(source, 'output/pdf/CS6382_Assignment_1_Beginner_Revision_Handout.zh.pdf');
