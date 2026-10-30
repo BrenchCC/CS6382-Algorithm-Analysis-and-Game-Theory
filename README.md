@@ -10,9 +10,9 @@
 | 第 1、2、6 题答案 | [中文](assignment1/answers/CS6382_Assignment_1_Answers_Selected.zh.md) · [English](assignment1/answers/CS6382_Assignment_1_Answers_Selected.en.md) |
 | 第 3、4、5 题答案 | [中文](assignment2/answers/CS6382_Assignment_2_Answers_Remaining.zh.md) · [English](assignment2/answers/CS6382_Assignment_2_Answers_Remaining.en.md) |
 | 全题复习讲义 | [中文 Markdown](revision/CS6382_Assignment_1_Beginner_Revision_Handout.zh.md) · [PDF](revision/output/pdf/CS6382_Assignment_1_Beginner_Revision_Handout.zh.pdf) |
-| 已整理的手写提交件 | [PDF](assignment1/submit/CS6382_Assignment_1_Handwritten_Submission.pdf) |
+| 手写提交件 | [第 1、2、6 题 PDF](assignment1/submit/CS6382_Assignment_1_Handwritten_Submission.pdf) · [第 3、4、5 题 PDF](assignment2/submit/CS6382_Assignment_2_Handwritten_Submission.pdf) |
 
-题意以原始 PDF 为准。两组答案按小问编号组织，保留必要的计算和证明，便于对照题目手写。`assignment1/submit/` 中的手写提交件只包含第 1、2、6 题。
+题意以原始 PDF 为准。两组答案按小问编号组织，保留必要的计算和证明，便于对照题目手写。两份手写提交件分别包含第 1、2、6 题和第 3、4、5 题。
 
 ## 目录结构
 
@@ -27,6 +27,9 @@
 | `assignment1/submit/pages/` | 从原图转换的第 1、2、6 题 JPG 页面 |
 | `assignment1/submit/` | 合并后的手写提交 PDF |
 | `assignment2/answers/` | 同一套题中第 3、4、5 题的中、英文答案 |
+| `assignment2/submit/originals/` | 第 3、4、5 题手写稿的 DNG 原图 |
+| `assignment2/submit/pages/` | 方向已校正的第 3、4、5 题 JPG 页面 |
+| `assignment2/submit/` | 合并后的三页 A4 手写提交 PDF |
 
 ## 复习讲义
 
