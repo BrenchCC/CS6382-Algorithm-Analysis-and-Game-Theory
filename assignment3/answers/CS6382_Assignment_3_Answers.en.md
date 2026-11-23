@@ -6,14 +6,14 @@ Student No.: ____________________　Student Name: ____________________
 
 ### (a) Conflict graph
 
-The graph is the following path. The letters above the edges are the shared elements.
+Each edge is labelled with the shared element.
 
 ```text
      c       e       g       i
 S1 ----- S2 ----- S3 ----- S4 ----- S5
 ```
 
-A packing is feasible if and only if its vertices form an independent set: no two chosen vertices are adjacent.
+A packing is feasible exactly when no two chosen vertices are joined by an edge. This is an independent set.
 
 ### (b) All maximal packings
 
@@ -26,23 +26,25 @@ There are four maximal packings.
 | $\{S_2,S_4\}$ | $8+7=15$ |
 | $\{S_2,S_5\}$ | $8+4=12$ |
 
-To prove completeness, consider whether $S_3$ is chosen.
+If we choose $S_3$, we cannot choose $S_2,S_4$. We must add $S_1,S_5$ to make the packing maximal.
 
-If $S_3$ is chosen, $S_2,S_4$ are excluded. Maximality forces both $S_1,S_5$, giving $\{S_1,S_3,S_5\}$.
+Without $S_3$, we must choose one of $S_1,S_2$ and one of $S_4,S_5$. But $\{S_1,S_5\}$ is not maximal: we can add $S_3$. This leaves the other three rows.
 
-If $S_3$ is not chosen, maximality requires one of $S_1,S_2$ and one of $S_4,S_5$. The choice $\{S_1,S_5\}$ allows us to add $S_3$, so it is not maximal. The other three choices are exactly those in the table. In each listed packing, every unchosen triple conflicts with a chosen one.
+No triple can be added to any packing in the table. Thus the list is complete.
 
 ### (c) Alice and Bob
 
 Alice chooses $\{S_1,S_3,S_5\}$, with 3 triples. Bob chooses $\{S_2,S_4\}$, with profit 15.
 
-Any non-maximal packing can be extended by adding a triple. This increases its size and, since all profits are positive, its profit. Thus both optima must be maximal. The table in (b) proves the claims.
+If a packing is not maximal, we can add a triple. This increases both its size and profit, since all profits are positive. So we only need to compare the maximal packings.
 
 ### (d) Changing the profit of S3
 
-For $x\gt0$, the best packing containing $S_3$ is $\{S_1,S_3,S_5\}$, with profit $x+8$. The best packing without $S_3$ is $\{S_2,S_4\}$, with profit 15.
+With $S_3$, the best choice is $\{S_1,S_3,S_5\}$, earning $x+8$.
 
-Thus every maximum-profit packing contains $S_3$ exactly when
+Without $S_3$, the best choice is $\{S_2,S_4\}$, earning 15.
+
+Every best packing contains $S_3$ exactly when
 
 ```math
 x+8\gt15
@@ -50,15 +52,15 @@ x+8\gt15
 x\gt7.
 ```
 
-Since $x$ is a positive integer, the answer is $x\ge8$.
+For integer $x$, this means $x\ge8$.
 
-At $x=7$, exactly two packings tie: $\{S_1,S_3,S_5\}$ and $\{S_2,S_4\}$. Both earn 15. Hence some, but not all, optimal packings contain $S_3$. For $1\le x\le6$, the unique optimum is $\{S_2,S_4\}$.
+At $x=7$, both choices earn 15. One contains $S_3$ and one does not. For $1\le x\le6$, only $\{S_2,S_4\}$ is best.
 
 ## Question 2 Round-robin fair division
 
 ### (a) Picks and final bundles
 
-The picks are as follows. The last round has only two picks.
+Pick from left to right in each row.
 
 | Round | Alice | Bob | Carol |
 | --- | --- | --- | --- |
@@ -76,7 +78,7 @@ X_C=\{b,h\}.
 
 ### (b) Values and envy pairs
 
-Each row uses that agent's values for all three bundles.
+Use each agent's own values in their row.
 
 | Agent | $X_A$ | $X_B$ | $X_C$ |
 | --- | --- | --- | --- |
@@ -84,25 +86,27 @@ Each row uses that agent's values for all three bundles.
 | Bob | $8+6+2=16$ | $7+5+3=15$ | $1+4=5$ |
 | Carol | $6+3+2=11$ | $8+5+1=14$ | $7+4=11$ |
 
-The only envy pairs are $(B,A)$ and $(C,B)$, since $16\gt15$ and $14\gt11$. Carol values her own bundle and Alice's bundle equally, so $(C,A)$ is not an envy pair.
+Only Bob envies Alice ($16\gt15$), and Carol envies Bob ($14\gt11$). The pairs are $(B,A)$ and $(C,B)$.
 
 ### (c) EF1
 
-The allocation is EF1. For Bob's envy of Alice, remove $g$ from Alice's bundle:
+Yes, the allocation is EF1.
+
+For Bob, remove $g$ from Alice's bundle:
 
 ```math
 v_B(X_A\setminus\{g\})=6+2=8
 \le15=v_B(X_B).
 ```
 
-For Carol's envy of Bob, remove $d$ from Bob's bundle:
+For Carol, remove $d$ from Bob's bundle:
 
 ```math
 v_C(X_B\setminus\{d\})=5+1=6
 \le11=v_C(X_C).
 ```
 
-These are the only envy pairs. Each can be resolved by removing one good from the envied bundle.
+Both envy pairs are resolved. There is no other envy.
 
 ## Question 3 Game theory
 
@@ -110,36 +114,36 @@ These are the only envy pairs. Each can be resolved by removing one good from th
 
 ### (a) Best responses and pure Nash equilibria
 
-The best responses follow from these comparisons.
+The best responses are:
 
-| Club | Other club's choice | Best response | Payoff comparison |
+| Club | Other club chooses | Best choice | Reason |
 | --- | --- | --- | --- |
 | Art | $N$ | $S$ | $3\gt1$ |
 | Art | $S$ | $N$ | $5\gt2$ |
 | Book | $N$ | $S$ | $3\gt2$ |
 | Book | $S$ | $N$ | $5\gt1$ |
 
-Writing the art club's choice first, the pure Nash equilibria are
+The pure Nash equilibria are (art club first):
 
 ```math
 (N,S),\qquad(S,N).
 ```
 
-At each, both clubs play a best response. At $(N,N)$, the art club gains by switching to $S$. At $(S,S)$, the art club gains by switching to $N$. Thus there are no other pure equilibria.
+Both clubs play a best response at these two outcomes. At either same-hall outcome, the art club can gain by changing halls. So there are no other pure equilibria.
 
 ### (b) Pareto efficiency
 
-Both equilibria are Pareto efficient among the four outcomes.
+Both are Pareto efficient.
 
-At $(N,S)$, the payoff is $(5,3)$. Every other outcome gives the art club less than 5, so none can Pareto improve it.
+At $(N,S)$, payoffs are $(5,3)$. Every other outcome makes the art club worse off.
 
-At $(S,N)$, the payoff is $(3,5)$. Every other outcome gives the book club less than 5, so none can Pareto improve it.
+At $(S,N)$, payoffs are $(3,5)$. Every other outcome makes the book club worse off.
 
 ### Part II Sharing a volunteer grant
 
 ### (c) Coalition values
 
-Every pair supplies at least five volunteers. No single club does.
+Each pair has at least five volunteers. Each single club has fewer than five.
 
 ```math
 \begin{aligned}
@@ -150,9 +154,9 @@ v(\{A,B\})&=v(\{A,C\})=v(\{B,C\})=v(\{A,B,C\})=90.
 
 ### (d) Shapley values
 
-In every order, the second club first earns the grant. Its marginal contribution is 90; the others contribute 0.
+The second club makes the total reach five. Its marginal contribution is 90. The others contribute 0.
 
-| Arrival order | Club that first earns the grant | $\Delta_A$ | $\Delta_B$ | $\Delta_C$ |
+| Order | Grant earned when this club joins | $\Delta_A$ | $\Delta_B$ | $\Delta_C$ |
 | --- | --- | --- | --- | --- |
 | $ABC$ | $B$ | 0 | 90 | 0 |
 | $ACB$ | $C$ | 0 | 0 | 90 |
@@ -161,7 +165,7 @@ In every order, the second club first earns the grant. Its marginal contribution
 | $CAB$ | $A$ | 90 | 0 | 0 |
 | $CBA$ | $B$ | 0 | 90 | 0 |
 
-Each club contributes 90 in two of the six orders. Therefore
+Each club contributes 90 twice. So
 
 ```math
 \phi_A=\phi_B=\phi_C
@@ -170,15 +174,15 @@ Each club contributes 90 in two of the six orders. Therefore
 
 ### (e) Core
 
-The Shapley allocation $(30,30,30)$ is not in the core. Coalition $\{A,B\}$ can earn 90 and split it as $(45,45)$. Both members get strictly more than 30, so this coalition blocks the allocation.
+The Shapley allocation $(30,30,30)$ is not in the core. Clubs $A,B$ can leave and split 90 as $(45,45)$. Both get more than 30, so they block it.
 
-In fact, the core is empty. Suppose a core allocation $(x_A,x_B,x_C)$ exists. It must satisfy
+The core is empty. Any core allocation must satisfy
 
 ```math
 x_A+x_B+x_C=90,\qquad x_A,x_B,x_C\ge0.
 ```
 
-Every pair can earn 90. To prevent a pair from leaving, we need
+Each pair can earn 90, so we also need
 
 ```math
 x_A+x_B\ge90,\qquad
@@ -186,10 +190,10 @@ x_A+x_C\ge90,\qquad
 x_B+x_C\ge90.
 ```
 
-If a pair received less than 90 in total, it could split the difference and make both members strictly better off. Adding the three inequalities gives
+Otherwise, a pair can leave and share the extra money, making both better off. Adding these inequalities gives
 
 ```math
 180=2(x_A+x_B+x_C)\ge270,
 ```
 
-which is impossible. Thus no division of the 90 dollars belongs to the core.
+This is impossible. Thus no division of 90 is in the core.
